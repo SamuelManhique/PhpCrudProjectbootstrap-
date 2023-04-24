@@ -22,15 +22,37 @@
                         <a class="nav-link active" aria-current="page" href="index.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="novoUsuario.php">Novo Cadastro</a>
+                        <a class="nav-link" href="?page=novo">Novo Cadastro</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="lista.php">Listar</a>
+                        <a class="nav-link" href="?page=listar">Listar</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col mt-5">
+                <?php
+                include('conexao.php');
+                switch (@$_REQUEST['page']) {
+                    case 'novo':
+                        include('novoUsuario.php');
+                        break;
+                    case 'listar':
+                        include('lista.php');
+                        break;
+                    case 'salvar':
+                        include('salvar.php');
+                    default:
+                        echo ("OLa MUNDO!!");
+                }
+                ?>
+            </div>
+        </div>
+    </div>
 
     <script src="js/bootstrap.bundle.js"></script>
 </body>
