@@ -1,6 +1,9 @@
-<h1>NOVO USUARIO</h1>
+<h1>NOVO USUARIO1</h1>
 
 <form action="?page=salvar" method="POST">
+
+    <input type="hidden" name="acao" value="cadastrar">
+
     <div class="mb-3">
         <label>Nome</label>
         <input type="text" name="nome" class="form-control">
@@ -18,7 +21,7 @@
 
     <div class="mb-3">
         <label>Data de Nascimento</label>
-        <input type="date" name="dataNascimento" class="form-control">
+        <input type="date" name="data_nascimento" class="form-control">
     </div>
 
     <div class="mb-3">
