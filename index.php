@@ -27,6 +27,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="?page=listar">Listar</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="?page=listar">Editar</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -46,6 +49,10 @@
                         break;
                     case 'salvar':
                         include('salvar.php');
+                        break;
+                    case 'editar':
+                        include('editar.php');
+                        break;
                     default:
                         echo ("OLa MUNDO!!");
                 }

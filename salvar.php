@@ -21,6 +21,43 @@ switch ($_REQUEST["acao"]) {
 
         break;
 
+    case 'editar':
+
+        $nome = $_POST["nome"];
+        $email = $_POST["email"];
+        $senha = md5($_POST["senha"]);
+        $data_nascimento = $_POST["data_nascimento"];
+
+        $sql = "UPDATE usuario SET 
+                   nome ='{$nome}',
+                   email ='{$email}',
+                   senha ='{$senha}',
+                   data_nascimento='{$data_nascimento}'
+                WHERE
+                  id=" . $_REQUEST["id"];
+
+        $res = $conn->query($sql);
+
+        if ($res == true) {
+            print "<script>alert('Editado com sucesso');</script>";
+            print "<script>location.href='?page=listar';</script>";
+        } else {
+            print "<script>alert('Nao foi possivel editar');</script>";
+            print "<script>location.href='?page=listar';</script>";
+        }
+
+        break;
+
+    case 'excluir':
+
+        $sql = "DELETE FROM usuario WHERE id=" . $_REQUEST["id"];
+        $res = $conn->query($sql);
+
+        if ($res == true) {
+        }
+
+        break;
+
     default:
         # code...
         break;
