@@ -28,7 +28,7 @@ if ($qtd > 0) {
         print "<td> 
                        <button onclick=\" location.href='?page=editar&id=" . $row->id . "';\" class='btn btn-sucess'>Editar</button> 
 
-                       <button onclick=\" if(confirm('Tem cereteza que deseja excluir?')) { location.href='?page=editar&id=" . $row->id . "';} else {false;}\" class='btn btn-danger'>Apagar</button>
+                       <button onclick=\" if(confirm('Tem cereteza que deseja excluir?')) { location.href='?page=salvar&acao=excluir&id=" . $row->id . "';} else {false;}\" class='btn btn-danger'>Apagar</button>
                </td>";
         print "</tr>";
     }
